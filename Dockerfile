@@ -1,9 +1,9 @@
-FROM docker.io/maven:3.5-jdk-8-alpine
+FROM library/maven:3.5-jdk-8-alpine
 COPY . /src
 WORKDIR /src
 RUN mvn install
 
-FROM docker.io/openjdk:8-jre-alpine
+FROM library/openjdk:8-jre-alpine
 WORKDIR /app
 EXPOSE 8080
 ENV VERSION=2.0.0.BUILD-SNAPSHOT
